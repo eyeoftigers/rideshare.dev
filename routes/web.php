@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::get('auth/fb', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/fb/callback', 'Auth\AuthController@handleProviderCallback');

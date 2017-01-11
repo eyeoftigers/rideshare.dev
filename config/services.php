@@ -14,6 +14,13 @@ return [
     |
     */
 
+    'facebook' => [
+    'client_id' => '1781183405476379',
+    'client_secret' => '231b5d3bafa44a9195313a8df980e8c6',
+    'redirect' => 'http://rideshare.dev/auth/fb/callback',
+    ],
+
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

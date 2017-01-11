@@ -178,6 +178,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+        *Custom providers
+        */
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
+        
+
     ],
 
     /*
@@ -225,6 +232,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+        * Custom Alias
+        */
+
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
