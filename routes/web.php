@@ -22,3 +22,17 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('auth/fb', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/fb/callback', 'Auth\AuthController@handleProviderCallback');
+
+
+Route::get('/test',function(){
+//return App\Models\Member::all();
+
+//return App\Models\ChitchatPreference::all();
+//return App\Models\MemberPreference::all();
+//return App\Models\SmokingPreference::all();
+//return App\Models\PetPreference::all();
+//return App\Models\MusicPreference::all();
+
+//return App\Models\ChitchatPreference::all();
+}
+);
