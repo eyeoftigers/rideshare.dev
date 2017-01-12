@@ -5,13 +5,13 @@ use App\Http\Controllers\Controller;
 
 use Socialite;
 
-use App\Models\User;
+use App\Models\Member;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
     /**
-     * Redirect the user to the GitHub authentication page.
+     * Redirect the member to the GitHub authentication page.
      *
      * @return Response
      */
@@ -29,25 +29,24 @@ class AuthController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
 
-        $userExist = User::whereEmail($user->getEmail())->first();
+        $memberExist = Member::whereEmail($user->getEmail())->first();
         
-        if($userExist)
+        if($memberExist)
         {   
-            Auth::login($userExist);
+            Auth::login($memberExist);
             
         }
         else
         {
-            $newUserCreated=User::create([
+            $newMemberCreated=Member::create([
             'name' => $user->getName(),
             'email' => $user->getEmail(),
             'password' => bcrypt(123456),
             ]);
             
-            if($newUserCreated)
+            if($newMemberCreated)
             {
-                Auth::login($newUserCreated);
-               
+                Auth::login($newMemberCreated);          
             }
 
         }
