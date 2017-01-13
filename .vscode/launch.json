@@ -5,17 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "name": "Listen for XDebug",
+            "type": "php",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceRoot}/app.js",
-            "cwd": "${workspaceRoot}"
+            "port": 9000
         },
         {
-            "type": "node",
-            "request": "attach",
-            "name": "Attach to Process",
-            "port": 5858
+            "name": "Launch currently open script",
+            "type": "php",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "port": 9000
         }
     ]
 }
