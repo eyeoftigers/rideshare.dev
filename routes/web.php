@@ -25,7 +25,14 @@ Route::get('auth/fb/callback', 'Auth\AuthController@handleProviderCallback');
 
 
 Route::get('/test',function(){
-//return App\Models\Member::all();
+    
+$data= App\Models\Member::with('MemberPreference',
+                               'MemberPreference.ChitchatPreference',
+                               'MemberPreference.MusicPreference',
+                               'MemberPreference.PetPreference',
+                               'MemberPreference.SmokingPreference'
+                               )->first();
+return view('welcome', $data);
 
 //return App\Models\ChitchatPreference::all();
 //return App\Models\MemberPreference::all();

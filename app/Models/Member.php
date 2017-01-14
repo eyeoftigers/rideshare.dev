@@ -26,4 +26,13 @@ class Member extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function MemberPreference(){
+        return  $this->hasOne('App\Models\MemberPreference');
+    }
+
+    
+
+    
+   
 }

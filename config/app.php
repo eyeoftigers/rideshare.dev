@@ -183,6 +183,7 @@ return [
         */
         Laravel\Socialite\SocialiteServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         
 
     ],
