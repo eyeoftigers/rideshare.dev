@@ -23,6 +23,22 @@ Route::get('/home', 'HomeController@index');
 Route::get('auth/fb', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/fb/callback', 'Auth\AuthController@handleProviderCallback');
 
+Route::group(['middleware' => 'auth','prefix' => 'dashboard'], function() {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+
+    Route::group(['prefix' => 'profile'], function() {
+        Route::get('/general', 'PreferenceController@profile');
+        Route::get('/picture', 'PreferenceController@profile');
+        Route::get('/preferences', 'PreferenceController@profile');
+        Route::get('/verifications', 'PreferenceController@profile');
+        Route::get('/cars', 'PreferenceController@profile');
+        Route::get('/address', 'PreferenceController@profile');
+        Route::get('/verifications', 'PreferenceController@profile');
+        Route::get('/verifications', 'PreferenceController@profile');
+    });
+
+});
+
 
 Route::get('/test',function(){
     
